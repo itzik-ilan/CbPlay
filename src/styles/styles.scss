@@ -1,0 +1,60 @@
+// Variables
+
+// Import
+@import "partial";
+
+// how many time we have :background-color: #16AFFF ?
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #16AFFF;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.myCLass{
+  background-color: $primary-color;
+}
+
+// Nesting
+
+// can we realy read this?
+// #designer-expression-dialog .modal-body > .expression-editor-preview > .error-message
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+// Import
+@import "base";
+
+.box { font-weight: $regular}
+
+
+@mixin message($color) {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  border-color: $color;
+}
+
+.success { @include message(green); }
+
+.error { @include message(red); }
+//
+// .warning {
+//   @extend .message;
+//   border-color: yellow;
+// }
